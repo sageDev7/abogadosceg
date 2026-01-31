@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abogados CEG - Especialistas en derecho civil, laboral y penal. Abordaje integral y soluciones globales para cada caso. Buenos Aires.">
+    <title>Abogados CEG | Derecho Civil, Laboral y Penal | Buenos Aires</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-navy: #222850;
+            --color-gold: #efc057;
+            --color-white: #ffffff;
+            --color-navy-light: #2e3566;
+            --color-navy-dark: #161835;
+            --font-serif: 'Libre Baskerville', serif;
+            --font-sans: 'Raleway', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ========== NAVBAR ========== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 2.25rem 0;
+            transition: background-color 0.3s ease;
+            background-color: transparent;
+        }
+
+        header.scrolled {
+            background-color: var(--color-navy-dark);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-logo {
+            position: absolute;
+            left: 2.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        header.scrolled .nav-logo {
+            opacity: 1;
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--color-white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-gold);
+        }
+
+        .nav-cta {
+            background-color: var(--color-gold);
+            color: var(--color-navy) !important;
+            padding: 0.7rem 1.6rem;
+            border-radius: 0;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--color-white);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1002;
+            position: absolute;
+            right: 0;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 180px 2rem 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80') center/cover no-repeat fixed;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: var(--color-navy);
+            mix-blend-mode: multiply;
+            opacity: 0.92;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-phone {
+            font-size: 2.2rem;
+            color: var(--color-white);
+            margin-bottom: 0.6rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .hero-phone i {
+            color: var(--color-gold);
+            margin-right: 0.4rem;
+        }
+
+        .hero-divider {
+            width: 140px;
+            height: 2px;
+            background-color: var(--color-gold);
+            margin: 0 auto 2rem;
+        }
+
+        .hero-logo {
+            max-width: 480px;
+            width: 80%;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-email {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-email a {
+            color: rgba(255,255,255,0.75);
+            transition: color 0.3s ease;
+        }
+
+        .hero-email a:hover {
+            color: var(--color-gold);
+        }
+
+        .hero-social {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+        }
+
+        .hero-social a {
+            color: var(--color-white);
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .hero-social a:hover {
+            color: var(--color-gold);
+        }
+
+        .btn {
+            padding: 0.95rem 2.2rem;
+            border: none;
+            border-radius: 0;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-gold {
+            background-color: var(--color-gold);
+            color: var(--color-navy);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--color-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-white);
+            color: var(--color-navy);
+            transform: translateY(-2px);
+        }
+
+        .btn-navy {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+        }
+
+        .btn-navy:hover {
+            background-color: var(--color-navy-light);
+            transform: translateY(-2px);
+        }
+
+        /* ========== SECTION TITLES ========== */
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .section-title-light {
+            color: var(--color-white);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 3.5rem;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .section-subtitle-light {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-gold);
+            margin: 0 auto 1.5rem;
+        }
+
+        /* ========== ESPECIALIDADES ========== */
+        .especialidades {
+            padding: 120px 0;
+            background-color: var(--color-white);
+        }
+
+        .especialidades .section-title { color: var(--color-navy); }
+        .especialidades .section-subtitle { color: #666; }
+
+        .especialidades-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .especialidad-card {
+            background: var(--color-navy);
+            color: white;
+            padding: 2.8rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .especialidad-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--color-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .especialidad-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .especialidad-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(34, 40, 80, 0.3);
+        }
+
+        .especialidad-card i {
+            font-size: 2.8rem;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .especialidad-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+
+        .especialidad-card p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ========== SERVICIOS DETALLE ========== */
+        .servicios {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .servicios::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&q=80') center/cover no-repeat;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .servicios::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: var(--color-navy);
+            mix-blend-mode: multiply;
+            opacity: 0.92;
+            z-index: 1;
+        }
+
+        .servicios .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .servicio-item {
+            border-left: 3px solid var(--color-gold);
+            padding: 1.8rem 2rem;
+            background: rgba(255,255,255,0.04);
+            transition: all 0.3s ease;
+        }
+
+        .servicio-item:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .servicio-item h3 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-gold);
+        }
+
+        .servicio-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ========== FILOSOFÍA ========== */
+        .filosofia {
+            padding: 120px 0;
+            background-color: #f4f5f8;
+        }
+
+        .filosofia .section-title { color: var(--color-navy); }
+        .filosofia .section-subtitle { color: #666; }
+
+        .filosofia-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .filosofia-item {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .filosofia-number {
+            width: 70px;
+            height: 70px;
+            border: 3px solid var(--color-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--color-gold);
+            font-weight: 700;
+        }
+
+        .filosofia-item h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-navy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filosofia-item p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* ========== TESTIMONIOS ========== */
+        .testimonios {
+            padding: 120px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonios::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80') center/cover no-repeat;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .testimonios::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: var(--color-navy-dark);
+            mix-blend-mode: multiply;
+            opacity: 0.92;
+            z-index: 1;
+        }
+
+        .testimonios .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonios .section-title { color: var(--color-white); }
+        .testimonios .section-subtitle { color: rgba(255,255,255,0.6); }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonio-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonio-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--color-gold);
+        }
+
+        .testimonio-quote {
+            font-size: 3.5rem;
+            color: var(--color-gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+            font-family: Georgia, serif;
+        }
+
+        .testimonio-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            font-style: italic;
+        }
+
+        .testimonio-author {
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .testimonio-case {
+            color: var(--color-gold);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ========== FAQ ========== */
+        .faq {
+            padding: 120px 0;
+            background-color: var(--color-white);
+        }
+
+        .faq .section-title { color: var(--color-navy); }
+        .faq .section-subtitle { color: #666; }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .faq-question {
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover h3 {
+            color: var(--color-gold);
+        }
+
+        .faq-question h3 {
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            color: var(--color-navy);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-align: center;
+            flex: 1;
+        }
+
+        .faq-question i {
+            color: var(--color-gold);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-question h3 {
+            color: var(--color-gold);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 0 1.5rem;
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* ========== INSTAGRAM ========== */
+        .instagram {
+            padding: 120px 0;
+            background-color: #f4f5f8;
+        }
+
+        .instagram .section-title { color: var(--color-navy); }
+        .instagram .section-subtitle { color: #666; }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .instagram-embed {
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .instagram-embed iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+        }
+
+        .instagram-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* ========== CTA ========== */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--color-navy);
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(239, 192, 87, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(239, 192, 87, 0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, transparent 40%, rgba(22, 24, 53, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            font-family: var(--font-serif);
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+
+        .cta p {
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ========== CONTACTO ========== */
+        .contacto {
+            padding: 120px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contacto::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&q=80') center/cover no-repeat fixed;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .contacto::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: var(--color-navy-dark);
+            mix-blend-mode: multiply;
+            opacity: 0.92;
+            z-index: 1;
+        }
+
+        .contacto .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contacto .section-title { color: var(--color-white); }
+        .contacto .section-subtitle { color: rgba(255,255,255,0.6); }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .contacto-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contacto-icon i {
+            font-size: 1.3rem;
+            color: var(--color-navy);
+        }
+
+        .contacto-text h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--color-white);
+        }
+
+        .contacto-text p,
+        .contacto-text a {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .contacto-text a:hover {
+            color: var(--color-gold);
+        }
+
+        .contacto-form {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 0;
+            background: rgba(255,255,255,0.06);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-gold);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23efc057' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background-color: var(--color-navy-dark);
+            color: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-group button {
+            width: 100%;
+        }
+
+        /* ========== MAPA ========== */
+        .mapa {
+            padding: 0;
+            display: block;
+        }
+
+        .mapa iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background-color: var(--color-navy);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about .footer-logo {
+            height: 70px;
+            width: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-about p {
+            line-height: 1.8;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.92rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--color-gold);
+            border-color: var(--color-gold);
+            color: var(--color-navy);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4,
+        .footer-especialidades h4 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-gold);
+        }
+
+        .footer-links ul,
+        .footer-especialidades ul {
+            list-style: none;
+        }
+
+        .footer-links li,
+        .footer-especialidades li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a,
+        .footer-especialidades li {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-bottom a {
+            color: var(--color-gold);
+            font-weight: 600;
+        }
+
+        /* ========== WHATSAPP BUTTON ========== */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8); }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 968px) {
+            header {
+                padding: 4.5rem 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-container {
+                justify-content: center;
+                position: relative;
+            }
+
+            .nav-logo {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+                padding: 0.8rem 0;
+            }
+
+            .nav-logo img {
+                height: 76px;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--color-navy-dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            .hero {
+                padding: 104px 2rem 80px;
+            }
+
+            .hero-logo {
+                width: 70%;
+            }
+
+            .hero-phone {
+                font-size: 1.6rem;
+            }
+
+            .especialidades-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filosofia-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .instagram-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .especialidades,
+            .servicios,
+            .filosofia,
+            .testimonios,
+            .faq,
+            .instagram,
+            .cta,
+            .contacto {
+                padding: 90px 0;
+            }
+
+            .contacto-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .contacto-info {
+                align-items: center;
+            }
+
+            .contacto-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-about,
+            .footer-links,
+            .footer-especialidades {
+                text-align: center;
+            }
+
+            .footer-about .footer-logo {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-links ul,
+            .footer-especialidades ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-group label {
+                text-align: center;
+            }
+
+            .mapa iframe {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contacto-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header id="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#hero" class="nav-logo">
+                    <img src="./logo.png" alt="Abogados CEG">
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#filosofia">Filosofía</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-phone">
+                <i class="fas fa-phone"></i>1167437196
+            </div>
+            <div class="hero-divider"></div>
+            <img class="hero-logo" src="./logo.png" alt="Abogados CEG">
+            <div class="hero-email">
+                <a href="mailto:consultas@abogadosceg.com.ar">consultas@abogadosceg.com.ar</a>
+            </div>
+            <div class="hero-social">
+                <a href="https://www.facebook.com/abogadosceg/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/AbogadosCeg" target="_blank"><i class="fas fa-x"></i></a>
+                <a href="mailto:consultas@abogadosceg.com.ar"><i class="fas fa-envelope"></i></a>
+            </div>
+            <a href="#contacto" class="btn btn-gold" style="margin-top: 2rem;">Consulte Ahora</a>
+        </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="especialidades" id="especialidades">
+        <div class="container">
+            <div class="gold-line"></div>
+            <h2 class="section-title">Especialidades</h2>
+            <p class="section-subtitle">Tres áreas principales que forman el núcleo de nuestra práctica profesional, abordadas con profundidad y dedicación.</p>
+
+            <div class="especialidades-grid">
+                <div class="especialidad-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Derecho Penal</h3>
+                    <p>Asistencia a audiencias, excarcelaciones, recursos y ejecución penal. Defensa integral desde el primer momento hasta la resolución del caso.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Derecho Laboral</h3>
+                    <p>Despidos, trabajo en negro, accidentes laborales, ART y enfermedad profesional. Defensa de sus derechos laborales en todo el proceso.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Derecho Civil</h3>
+                    <p>Contratos, daños y perjuicios, familia y sucesiones. Abordaje integral de sus asuntos patrimoniales y familiares.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Detalle -->
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <div class="gold-line"></div>
+            <h2 class="section-title section-title-light">Servicios en Detalle</h2>
+            <p class="section-subtitle section-subtitle-light">Conoce en profundidad todo lo que cubrimos dentro de cada área de práctica.</p>
+
+            <div class="servicios-grid">
+                <div class="servicio-item">
+                    <h3>Derecho Penal</h3>
+                    <p>Asistencia a todas las audiencias, excarcelaciones, recursos y ejecución penal. Asumimos las defensas penales desde el primer momento durante todas las etapas del proceso, tanto en la instrucción, el juicio oral y la ejecución.</p>
+                </div>
+                <div class="servicio-item">
+                    <h3>Derecho Laboral</h3>
+                    <p>Despidos, trabajo en negro, trabajo doméstico, accidentes, ART, enfermedad profesional, hostigamiento laboral y ejecución de sentencias. Defensa completa de sus derechos laborales.</p>
+                </div>
+                <div class="servicio-item">
+                    <h3>Derecho Civil</h3>
+                    <p>Contratos, daños y perjuicios, divorcios, alimentos, régimen de comunicación, sucesiones y accidentes de tránsito. Atención tanto en reclamos patrimoniales como en asuntos de derecho de familia.</p>
+                </div>
+                <div class="servicio-item">
+                    <h3>Otras Especialidades</h3>
+                    <p>Derecho comercial, tributario, internacional privado, administrativo y jubilaciones & pensiones. Abordaje multidisciplinario para resolver problemas jurídicos complejos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofía -->
+    <section class="filosofia" id="filosofia">
+        <div class="container">
+            <div class="gold-line"></div>
+            <h2 class="section-title">Nuestra Filosofía</h2>
+            <p class="section-subtitle">Cuatro conceptos que forman la base ética de nuestra práctica y nos distinguen en cada caso.</p>
+
+            <div class="filosofia-grid">
+                <div class="filosofia-item">
+                    <div class="filosofia-number">01</div>
+                    <h3>Excelencia</h3>
+                    <p>Profesionalismo y formación académica de alto nivel que garantizan resultados óptimos en cada proceso legal.</p>
+                </div>
+                <div class="filosofia-item">
+                    <div class="filosofia-number">02</div>
+                    <h3>Seriedad</h3>
+                    <p>Las situaciones más delicadas pueden ser dejadas en nuestras manos con total confianza en nuestra discreción y profesionalismo.</p>
+                </div>
+                <div class="filosofia-item">
+                    <div class="filosofia-number">03</div>
+                    <h3>Compromiso</h3>
+                    <p>Contacto fluido y dinámico con el cliente. Atención personalizada orientada a generar respuestas rápidas y efectivas.</p>
+                </div>
+                <div class="filosofia-item">
+                    <div class="filosofia-number">04</div>
+                    <h3>Confianza</h3>
+                    <p>El eslabón que cierra el círculo. La satisfacción del cliente y la absoluta resolución de su problema son nuestro eje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonios" id="testimonios">
+        <div class="container">
+            <div class="gold-line"></div>
+            <h2 class="section-title section-title-light">Testimonios</h2>
+            <p class="section-subtitle section-subtitle-light">Lo que dicen nuestros clientes sobre nuestra atención y resultados.</p>
+
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">Excelente atención profesional. El estudio manejó mi caso laboral con rapidez y eficiencia. Muy satisfecho con el resultado obtenido.</p>
+                    <p class="testimonio-author">Roberto Sánchez</p>
+                    <p class="testimonio-case">Derecho Laboral</p>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">Profesionales serios y comprometidos. Me asesoraron en un proceso penal complejo y en todas las etapas mantuvieron una comunicación fluida y clara.</p>
+                    <p class="testimonio-author">Ana Martínez</p>
+                    <p class="testimonio-case">Derecho Penal</p>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">Sin dudas los recomendaría. Resolvieron mi caso de daños y perjuicios con un abordaje integral que superó mis expectativas.</p>
+                    <p class="testimonio-author">Carlos Fernández</p>
+                    <p class="testimonio-case">Derecho Civil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="gold-line"></div>
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Resolvemos las dudas más comunes sobre nuestros servicios y procesos.</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿En qué áreas del derecho se especializan?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Nuestras tres áreas principales son derecho penal, laboral y civil. Además, cubrimos derecho comercial, tributario, internacional privado, administrativo y jubilaciones & pensiones, permitiéndonos un abordaje integral de cualquier problema jurídico.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo puedo comunicarme con el estudio?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Pueden comunicarse telefónicamente al 11 6743 7196 o por correo electrónico a <a href="mailto:consultas@abogadosceg.com.ar">consultas@abogadosceg.com.ar</a>. También nos encuentran en nuestras redes sociales de Instagram, Facebook y Twitter.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué tipo de casos penales atienden?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Asumimos defensas penales desde el primer momento en todas las etapas del proceso: instrucción, juicio oral y ejecución penal. Gestionamos excarcelaciones, recursos y asistencia a todas las audiencias necesarias.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Atienden casos de trabajo en negro?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sí, atendemos casos de trabajo en negro, despidos injustificados, accidentes laborales, ART, enfermedad profesional y hostigamiento laboral. Nos encargamos de la defensa de sus derechos laborales desde el inicio hasta la resolución.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué significa el abordaje integral que ofrecen?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Nuestro abordaje integral significa que no solo resolvemos el problema inmediato, sino que analizamos el centro del conflicto para evitar consecuencias jurídicas futuras. Utilizamos métodos interdisciplinarios y, cuando es posible, un enfoque negociador para lograr la resolución más efectiva.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Atienden casos de jubilaciones y pensiones?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sí, atendemos extensión de moratoria, pensión universal para mayores de 65 años, reajustes y reparación histórica. El área de jubilaciones y pensiones es parte de nuestro abordaje multidisciplinario.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="instagram" id="instagram">
+        <div class="container">
+            <div class="gold-line"></div>
+            <h2 class="section-title">Síguenos en Instagram</h2>
+            <p class="section-subtitle">Contenido legal y novedades del estudio.</p>
+
+            <div class="instagram-grid" style="grid-template-columns: 1fr; max-width: 540px; margin: 0 auto;">
+                <div class="instagram-embed">
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DUD-cD6CZWB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DUD-cD6CZWB/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DUD-cD6CZWB/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida por abogadosceg (@abogadosceg)</a></p></div></blockquote>
+                </div>
+            </div>
+            <script async src="https://www.instagram.com/embed.js"></script>
+
+            <div class="instagram-cta">
+                <a href="https://www.instagram.com/abogadosceg/" target="_blank" class="btn btn-navy">
+                    <i class="fab fa-instagram"></i> @abogadosceg
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <h2>¿Necesita Asesoramiento Legal?</h2>
+            <p>Comuníquese con nosotros para recibir asesoramiento personalizado. Estamos preparados para dar solución integral a su problema jurídico.</p>
+            <div class="cta-buttons">
+                <a href="tel:1167437196" class="btn btn-gold">
+                    <i class="fas fa-phone"></i> Llamar Ahora
+                </a>
+                <a href="mailto:consultas@abogadosceg.com.ar" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> Correo Electrónico
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <div class="gold-line"></div>
+            <h2 class="section-title section-title-light">Contacto</h2>
+            <p class="section-subtitle section-subtitle-light">Estamos aquí para ayudarle. Comuníquese con nosotros.</p>
+
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Teléfono</h3>
+                            <p><a href="tel:1167437196">11 6743 7196</a></p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Correo Electrónico</h3>
+                            <p><a href="mailto:consultas@abogadosceg.com.ar">consultas@abogadosceg.com.ar</a></p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Instagram</h3>
+                            <p><a href="https://www.instagram.com/abogadosceg/" target="_blank">@abogadosceg</a></p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Facebook</h3>
+                            <p><a href="https://www.facebook.com/abogadosceg/" target="_blank">Abogados CEG</a></p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-x"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Twitter / X</h3>
+                            <p><a href="https://x.com/AbogadosCeg" target="_blank">@AbogadosCeg</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacto-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Su nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Su teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="area">Área de Consulta</label>
+                            <select id="area" name="area" required>
+                                <option value="" disabled selected>Seleccione un área</option>
+                                <option value="penal">Derecho Penal</option>
+                                <option value="laboral">Derecho Laboral</option>
+                                <option value="civil">Derecho Civil</option>
+                                <option value="comercial">Derecho Comercial</option>
+                                <option value="tributario">Derecho Tributario</option>
+                                <option value="internacional">Derecho Internacional Privado</option>
+                                <option value="administrativo">Derecho Administrativo</option>
+                                <option value="jubilaciones">Jubilaciones y Pensiones</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Descríbanos su situación..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-gold">Enviar Consulta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2!2d-58.44!3d-34.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zbuenos+aires!5e0!3m2!1ses!2sar!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img class="footer-logo" src="./logo.png" alt="Abogados CEG">
+                    <p>Estudio jurídico especializado en derecho civil, laboral y penal. Abordaje integral y soluciones globales con años de experiencia y profesionalismo.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/abogadosceg/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/abogadosceg/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/AbogadosCeg" target="_blank"><i class="fas fa-x"></i></a>
+                        <a href="mailto:consultas@abogadosceg.com.ar"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>enlaces</h4>
+                    <ul>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#filosofia">Filosofía</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-especialidades">
+                    <h4>Áreas</h4>
+                    <ul>
+                        <li>Derecho Penal</li>
+                        <li>Derecho Laboral</li>
+                        <li>Derecho Civil</li>
+                        <li>Derecho Comercial</li>
+                        <li>Jubilaciones</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Abogados CEG. Todos los derechos reservados.</p>
+                <p>Desarrollado por <a href="https://instagram.com/sageedev" target="_blank">@sageDev</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="tel:1167437196" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Contact Form → Email
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const area = document.getElementById('area').value;
+            const mensaje = document.getElementById('mensaje').value;
+            const subject = encodeURIComponent('Consulta de ' + nombre + ' - ' + area);
+            const body = encodeURIComponent('Nombre: ' + nombre + '\nTeléfono: ' + telefono + '\nÁrea: ' + area + '\n\n' + mensaje);
+            window.open('mailto:consultas@abogadosceg.com.ar?subject=' + subject + '&body=' + body, '_blank');
+            contactForm.reset();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
